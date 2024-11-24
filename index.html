@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фото из Telegram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .photo {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        img {
+            max-width: 100px;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        .description {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Фотографии из Telegram</h1>
+    <div id="photos"></div>
+
+    <script>
+        // Симуляция данных, которые могли бы поступать с сервера
+        const data = [
+            {
+                photo: "https://via.placeholder.com/100",
+                description: "Описание фото 1"
+            },
+            {
+                photo: "https://via.placeholder.com/100",
+                description: "Описание фото 2"
+            },
+            {
+                photo: "https://via.placeholder.com/100",
+                description: "Описание фото 3"
+            }
+        ];
+
+        const photosContainer = document.getElementById('photos');
+
+        // Отображение данных
+        data.forEach(photo => {
+            const photoDiv = document.createElement('div');
+            photoDiv.className = 'photo';
+
+            const img = document.createElement('img');
+            img.src = photo.photo;
+            photoDiv.appendChild(img);
+
+            const description = document.createElement('div');
+            description.className = 'description';
+            description.textContent = photo.description;
+            photoDiv.appendChild(description);
+
+            photosContainer.appendChild(photoDiv);
+        });
+    </script>
+</body>
+</html>
